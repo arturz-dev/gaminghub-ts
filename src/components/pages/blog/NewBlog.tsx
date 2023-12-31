@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
 import { Button } from '@mui/material'
 import { Editor } from 'primereact/editor'
-import { addBlog } from '../../features/blogDataSlice'
+import { addBlog } from '../../../features/blogDataSlice'
 import { useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 

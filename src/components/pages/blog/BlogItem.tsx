@@ -4,8 +4,8 @@ import dayjs from 'dayjs'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useDispatch } from 'react-redux'
-import { removeBlog } from '../../features/blogDataSlice'
-import { initialBlogListDataTypes } from '../../data/initialData'
+import { removeBlog } from '../../../features/blogDataSlice'
+import { initialBlogListDataTypes } from '../../../data/initialData'
 
 interface blogItemProps {
   item: initialBlogListDataTypes

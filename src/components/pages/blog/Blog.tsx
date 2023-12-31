@@ -2,7 +2,7 @@ import WatchLaterTwoToneIcon from '@mui/icons-material/WatchLaterTwoTone'
 import { useParams } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { Helmet } from 'react-helmet'
-import { useAppSelector } from '../../features/reduxHooks'
+import { useAppSelector } from '../../../features/reduxHooks'
 
 const Blog = () => {
   const { blogData } = useAppSelector((state) => state.blogDataRedux)

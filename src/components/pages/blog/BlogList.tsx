@@ -2,8 +2,8 @@ import { useEffect, useState, useCallback } from 'react'
 import ButtonSort from './buttonSort'
 import BlogItem from './BlogItem'
 import { Helmet } from 'react-helmet'
-import { useAppSelector } from '../../features/reduxHooks'
-import { initialBlogListDataTypes } from '../../data/initialData'
+import { useAppSelector } from '../../../features/reduxHooks'
+import { initialBlogListDataTypes } from '../../../data/initialData'
 
 const BlogList: React.FC = () => {
   const { blogData } = useAppSelector((state) => state.blogDataRedux)

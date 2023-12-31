@@ -2,12 +2,13 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import Home from './components/home/Home'
 import routerPaths from './data/routherPaths'
-import Blog from './components/pages/Blog'
+import Blog from './components/pages/blog/Blog'
 //import ScrollTop from './features/scrollTop.jsx'
-import BlogList from './components/pages/BlogList'
-import LastBlog from './components/pages/LastBlog'
-import PageNotFoundMsg from './components/pages/NotExist'
-import NewBlog from './components/pages/NewBlog'
+import BlogList from './components/pages/blog/BlogList'
+import LastBlog from './components/pages/blog/LastBlog'
+import PageNotFoundMsg from './components/pages/blog/NotExist'
+import NewBlog from './components/pages/blog/NewBlog'
+import APITest from './components/pages/APITest/APITest'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path={routerPaths.BLOG_LIST} element={<BlogList />} />
           <Route path={routerPaths.LAST_BLOG} element={<LastBlog />} />
           <Route path={routerPaths.NEW_BLOG} element={<NewBlog />} />
+          <Route path={routerPaths.API_TEST} element={<APITest />} />
           <Route path='*' element={PageNotFoundMsg()} />
         </Route>
       </Routes>

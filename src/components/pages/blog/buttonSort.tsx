@@ -2,7 +2,7 @@
 import Stack from '@mui/material/Stack'
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
-import { initialBlogListDataTypes } from '../../data/initialData'
+import { initialBlogListDataTypes } from '../../../data/initialData'
 //import { useAppSelector } from '../../features/reduxHooks'
 
 interface buttonSortProps {

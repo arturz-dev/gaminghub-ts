@@ -19,7 +19,7 @@ body {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  color: 'white';
+  color: $whiteColor;
   --toastify-color-success: yellow;
 }
 
@@ -489,7 +489,7 @@ body {
 
 .newblog {
   background-color: $milkColor;
-  color: white;
+  color: $whiteColor;
   margin: 200px 200px 400px 200px;
   padding: 20px;
   border-radius: 5px;

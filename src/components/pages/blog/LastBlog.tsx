@@ -1,6 +1,6 @@
 import WatchLaterTwoToneIcon from '@mui/icons-material/WatchLaterTwoTone'
 import dayjs from 'dayjs'
-import { useAppSelector } from '../../features/reduxHooks'
+import { useAppSelector } from '../../../features/reduxHooks'
 
 const LastBlog = () => {
   const { blogData } = useAppSelector((state) => state.blogDataRedux)
