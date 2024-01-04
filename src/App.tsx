@@ -9,6 +9,7 @@ import LastBlog from './components/pages/blog/LastBlog'
 import PageNotFoundMsg from './components/pages/blog/NotExist'
 import NewBlog from './components/pages/blog/NewBlog'
 import APITest from './components/pages/APITest/APITest'
+import TestApiRedux from './components/pages/APIRedux/TestApiRedux'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path={routerPaths.LAST_BLOG} element={<LastBlog />} />
           <Route path={routerPaths.NEW_BLOG} element={<NewBlog />} />
           <Route path={routerPaths.API_TEST} element={<APITest />} />
+          <Route path={routerPaths.API_REDUX} element={<TestApiRedux />} />
           <Route path='*' element={PageNotFoundMsg()} />
         </Route>
       </Routes>

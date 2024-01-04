@@ -244,11 +244,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  color: #181a1b;
 }
 .bulletin h1 {
   font-size: 2.6em;
   margin-top: 0px;
   margin-bottom: 40px;
+  color: #181a1b;
 }
 .bulletin p {
   margin-top: 0px;
@@ -618,4 +620,16 @@ body {
 }
 .notfound-msg span {
   margin-right: 5px;
+}
+
+.currency {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0;
+}
+.currency-icon {
+  position: absolute;
+  margin-left: 5px;
 }/*# sourceMappingURL=index.css.map */

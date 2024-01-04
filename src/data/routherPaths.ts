@@ -9,6 +9,7 @@ const routerPaths = {
   ON_SALE: '/#onsale',
   BULLETIN: '/#bulletinId',
   FOOTER: '/#footer',
+  API_REDUX: '/api-redux',
 }
 
 export default routerPaths

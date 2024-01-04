@@ -11,11 +11,14 @@ const NavMain = () => {
   ]
 
   const blogBtnData = [
-    { name: 'NEW BLOG', id: 1, src: '/newblog' },
-    { name: 'LAST BLOG', id: 2, src: '/last-blog' },
-    { name: 'BLOG LIST', id: 3, src: '/blog-list' },
-    { name: 'API TEST', id: 4, src: '/api-test' },
-    { name: 'NOT EXIST', id: 5, src: '/dsa' },
+    { name: 'NEW BLOG', id: 1, src: routerPaths.NEW_BLOG },
+    { name: 'LAST BLOG', id: 2, src: routerPaths.LAST_BLOG },
+    { name: 'BLOG LIST', id: 3, src: routerPaths.BLOG_LIST },
+  ]
+
+  const featuresData = [
+    { name: 'CURRENCY', id: 1, src: routerPaths.API_REDUX },
+    { name: 'POST/COMMENTS', id: 2, src: routerPaths.API_TEST },
   ]
 
   return (
@@ -23,7 +26,7 @@ const NavMain = () => {
       <NavButton data={homeBtnData} status='nav-btn' title={'HOME'} />
       <NavButton data={blogBtnData} status='nav-btn' title={'BLOG'} />
       <NavButton data={[]} status='nav-btn btn-nonactive' title={'NEWS'} />
-      <NavButton data={[]} status='nav-btn btn-nonactive' title={'FEATURES'} />
+      <NavButton data={featuresData} status='nav-btn' title={'API FEATURES'} />
       <NavButton data={[]} status='nav-btn btn-nonactive' title={'INNOVATION'} />
     </div>
   )
