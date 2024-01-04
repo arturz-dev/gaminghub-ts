@@ -32,16 +32,24 @@ export default function CurrencyTable() {
     },
   }))
 
-  const { rates } = useAppSelector((state) => state.blogDataRedux)
+  const { rates, currencyTableDate, currencyTableNo } = useAppSelector(
+    (store) => store.currencyDataRedux,
+  )
 
   return (
     <>
+      <div className='currency-header'>
+        {' '}
+        <h3 style={{ color: 'white' }}>TABLE DATE: {currencyTableDate}</h3>
+        <h3 style={{ color: 'white' }}>TABLE ID: {currencyTableNo}</h3>
+      </div>
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 600 }} aria-label='customized table'>
           <TableHead>
             <TableRow>
               <StyledTableCell>
-                Currency name{' '}
+                <strong>Currency name</strong>
                 <span className='currency-icon'>
                   {' '}
                   <CurrencyExchangeIcon fontSize='small' />
@@ -49,13 +57,13 @@ export default function CurrencyTable() {
               </StyledTableCell>
 
               <StyledTableCell align='right'>
-                Code{' '}
+                <strong>Code</strong>
                 <span className='currency-icon'>
                   <EuroIcon fontSize='small' />
                 </span>
               </StyledTableCell>
               <StyledTableCell align='center'>
-                Mid
+                <strong>Mid</strong>
                 <span className='currency-icon'>
                   <CompareArrowsIcon fontSize='small' />
                 </span>
@@ -69,7 +77,7 @@ export default function CurrencyTable() {
                   {row.currency}
                 </StyledTableCell>
                 <StyledTableCell align='right'>{row.code}</StyledTableCell>
-                <StyledTableCell align='center'>{row.mid.toFixed(2)}</StyledTableCell>
+                <StyledTableCell align='center'>{row.mid.toFixed(5)}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

@@ -632,4 +632,9 @@ body {
 .currency-icon {
   position: absolute;
   margin-left: 5px;
+}
+.currency-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }/*# sourceMappingURL=index.css.map */

@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { fetchRates } from '../../../features/blogDataSlice'
 import { useAppSelector } from '../../../features/reduxHooks'
 import { useAppDispatch } from '../../../features/reduxHooks'
 import CurrencyTable from './CurrencyTable'
+import { fetchRates } from '../../../features/currencyDataSlice'
 
 const TestApiRedux = () => {
   const { isError, isLoading } = useAppSelector((state) => state.blogDataRedux)

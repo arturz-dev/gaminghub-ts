@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import Footer from '../components/footer/Footer'
 import { Outlet } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import { fetchRates } from '../features/blogDataSlice'
+import { fetchRates } from '../features/currencyDataSlice'
 
 const RootLayout = () => {
   const dispatch = useAppDispatch()
@@ -18,7 +18,7 @@ const RootLayout = () => {
   return (
     <div className='root'>
       <Helmet>
-        <title>gaminhub Home</title>
+        <title>gaminhub</title>
       </Helmet>
       <Navbar />
       <Outlet />
