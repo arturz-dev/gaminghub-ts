@@ -10,6 +10,7 @@ const routerPaths = {
   BULLETIN: '/#bulletinId',
   FOOTER: '/#footer',
   API_REDUX: '/api-redux',
+  STYL_COMP: 'styled-component',
 }
 
 export default routerPaths

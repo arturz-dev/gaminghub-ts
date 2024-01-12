@@ -19,6 +19,7 @@ const NavMain = () => {
   const featuresData = [
     { name: 'CURRENCY', id: 1, src: routerPaths.API_REDUX },
     { name: 'POST/COMMENTS', id: 2, src: routerPaths.API_TEST },
+    { name: 'STYL COMP', id: 3, src: routerPaths.STYL_COMP },
   ]
 
   return (
