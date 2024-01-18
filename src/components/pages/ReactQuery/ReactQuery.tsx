@@ -1,9 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import RecipeReviewCard from './DrinkCard'
-import styled from 'styled-components'
 import Grid from '@mui/material/Unstable_Grid2'
 import Box from '@mui/material/Box'
+
+type DrinkTypes = {
+  [key: string]: string
+}
 
 const ReactQueryComp = () => {
   const getData = () => {
@@ -24,7 +27,7 @@ const ReactQueryComp = () => {
   return (
     <Box sx={{ flexGrow: 1, padding: 7 }}>
       <Grid container spacing={5}>
-        {dataFromApi?.data.map((drink) => (
+        {dataFromApi?.data.map((drink: DrinkTypes) => (
           <Grid xs={6} md={4}>
             <RecipeReviewCard
               drinkTitle={drink.strDrink}
