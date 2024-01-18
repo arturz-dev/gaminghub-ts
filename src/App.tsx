@@ -12,9 +12,14 @@ import APITest from './components/pages/APITest/APITest'
 import TestApiRedux from './components/pages/APIRedux/TestApiRedux'
 import ScrollTop from './features/scrollTop'
 import StylCompPg from './components/pages/StyledComponent/Styled.Component'
+import ReactQueryComp from './components/pages/ReactQuery/ReactQuery'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <Router>
       <ScrollTop />
       <Routes>
@@ -27,10 +32,12 @@ function App() {
           <Route path={routerPaths.API_TEST} element={<APITest />} />
           <Route path={routerPaths.API_REDUX} element={<TestApiRedux />} />
           <Route path={routerPaths.STYL_COMP} element={<StylCompPg />} />
+          <Route path={routerPaths.REACT_QUERY} element={<ReactQueryComp />}/>
           <Route path='*' element={PageNotFoundMsg()} />
         </Route>
       </Routes>
     </Router>
+    </QueryClientProvider>
   )
 }
 
