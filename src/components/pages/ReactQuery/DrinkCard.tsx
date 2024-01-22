@@ -14,6 +14,9 @@ import ShareIcon from '@mui/icons-material/Share'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { useState } from 'react'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import axios from 'axios'
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean
@@ -31,17 +34,8 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }))
 
-interface RecipeReviewCardProps {
-  drinkTitle: string
-  imgSrc: string
-  instruction: string
-  ingredient1: string
-  ingredient2: string
-  ingredient3: string
-  glass: string
-  proportion1: string
-  proportion2: string
-  proportion3: string
+export interface RecipeReviewCardProps {
+  [key: string]: string
 }
 
 export default function RecipeReviewCard({
@@ -55,12 +49,26 @@ export default function RecipeReviewCard({
   proportion1,
   proportion2,
   proportion3,
+  idDrink,
 }: RecipeReviewCardProps) {
   const [expanded, setExpanded] = useState(false)
 
   const handleExpandClick = () => {
     setExpanded(!expanded)
   }
+
+  const queryClient = useQueryClient()
+
+  const deleteData = (idDrink: string) => {
+    return axios.delete(`http://localhost:4000/drinks/${idDrink}`)
+  }
+
+  const { mutate: deleteDrink } = useMutation({
+    mutationFn: deleteData,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['simplequery'] })
+    },
+  })
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -90,6 +98,9 @@ export default function RecipeReviewCard({
         </IconButton>
         <IconButton aria-label='share'>
           <ShareIcon />
+        </IconButton>
+        <IconButton aria-label='share' onClick={() => deleteDrink(idDrink)}>
+          <DeleteForeverIcon fontSize='medium' />
         </IconButton>
         <ExpandMore
           expand={expanded}
