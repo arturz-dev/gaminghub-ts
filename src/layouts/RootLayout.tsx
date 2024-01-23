@@ -1,6 +1,5 @@
 import Navbar from '../components/navbar/Navbar'
 import { useAppDispatch } from '../features/reduxHooks'
-import { getFromLocalStorage } from '../features/blogDataSlice'
 import { useEffect } from 'react'
 import Footer from '../components/footer/Footer'
 import { Outlet } from 'react-router-dom'
