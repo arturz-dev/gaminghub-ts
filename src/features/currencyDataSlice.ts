@@ -14,9 +14,17 @@ export interface tableTypes {
   table: string
 }
 
-const initialState = {
-  currencyTableDate: [],
-  currencyTableNo: [],
+export interface initialStateTypes {
+  currencyTableDate: string
+  currencyTableNo: string
+  rates: ratesTypes[]
+  isLoading: boolean
+  isError: boolean
+}
+
+const initialState: initialStateTypes = {
+  currencyTableDate: '',
+  currencyTableNo: '',
   rates: [],
   isLoading: false,
   isError: false,

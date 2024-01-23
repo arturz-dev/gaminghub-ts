@@ -13,10 +13,10 @@ interface blogProp {
 }
 
 const Comments = ({ blog }: blogProp) => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState<boolean>(false)
   const [commentsData, setCommentsData] = useState<commentsDataProps[] | []>([])
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false)
 
   const commentsURL = 'https://jsonplaceholder.typicode.com/comments'
 

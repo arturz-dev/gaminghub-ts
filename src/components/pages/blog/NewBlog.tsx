@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
@@ -9,20 +9,20 @@ import { Editor } from 'primereact/editor'
 import { addBlog } from '../../../features/blogDataSlice'
 import { useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
-import ClearIcon from '@mui/icons-material/Clear';
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
+import Stack from '@mui/material/Stack'
+import ClearIcon from '@mui/icons-material/Clear'
 
 const NewBlog = () => {
   const dispatch = useDispatch()
-  const [text, setText] = useState('')
-  const [tag, setTag] = useState('')
-  const [title, setTitle] = useState('')
-  const [author, setAuthor] = useState('')
-  const [description, setDescription] = useState('')
-  const [imageURL, setImageURL] = useState('')
-  const [alert, setAlert] = useState(false)
+  const [text, setText] = useState<string>('')
+  const [tag, setTag] = useState<string>('')
+  const [title, setTitle] = useState<string>('')
+  const [author, setAuthor] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
+  const [imageURL, setImageURL] = useState<string>('')
+  const [alert, setAlert] = useState<boolean>(false)
 
   /* const valueChange = (set, event) => {
     set(event.target.value)
@@ -59,15 +59,19 @@ const NewBlog = () => {
   function DescriptionAlerts() {
     return (
       <Stack sx={{ width: '500px' }} spacing={2}>
-        <Alert variant="filled"  severity='error' >
-         <AlertTitle>Error </AlertTitle>
+        <Alert variant='filled' severity='error'>
+          <AlertTitle>Error </AlertTitle>
           All form fields must be completed to add a new blog.
-          <ClearIcon fontSize='small' onClick={() => setAlert(false)} sx={{cursor: 'pointer'}} style={{position: 'absolute', marginLeft: '90px', marginTop: '-35px'}}/>
-        </Alert>       
+          <ClearIcon
+            fontSize='small'
+            onClick={() => setAlert(false)}
+            sx={{ cursor: 'pointer' }}
+            style={{ position: 'absolute', marginLeft: '90px', marginTop: '-35px' }}
+          />
+        </Alert>
       </Stack>
-    );
+    )
   }
-
 
   const createBlog = () => {
     const newBlog = {
@@ -80,9 +84,9 @@ const NewBlog = () => {
       img: `${imageURL}`,
     }
     if (author === '' || title === '' || description === '' || text === '' || imageURL === '') {
-      setAlert(true) 
-    }
-    else {    dispatch(addBlog(newBlog))
+      setAlert(true)
+    } else {
+      dispatch(addBlog(newBlog))
       clearInputs()
       toast.success('Your new blog has been added!', {
         position: 'top-right',
@@ -93,26 +97,35 @@ const NewBlog = () => {
         draggable: true,
         progress: undefined,
         theme: 'dark',
-      })}
+      })
+    }
 
     console.log(newBlog)
   }
 
   return (
     <>
-    
-   
       {' '}
       <h1 style={{ textAlign: 'center', margin: '50px 0 -150px 0', color: 'whitesmoke' }}>
         ADD YOUR OWN GAMING<span style={{ color: '#2dc7bd' }}>HUB</span> BLOG
       </h1>
-    
-      
       <div className='newblog shadow-inside'>
-      { alert && <div style={{display:  'flex' , alignItems: 'center', justifyContent: 'center', zIndex: 99999, position: 'absolute', width: '760px', height: '100%' , }}><DescriptionAlerts /></div> }
+        {alert && (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 99999,
+              position: 'absolute',
+              width: '760px',
+              height: '100%',
+            }}
+          >
+            <DescriptionAlerts />
+          </div>
+        )}
         <div className='newblog-inputs'>
-     
-        
           <TextField
             sx={{ width: '40%' }}
             id='outlined-basic'
@@ -186,7 +199,6 @@ const NewBlog = () => {
           }}
         />
         <Button
-        
           style={{
             borderRadius: 1,
             backgroundColor: '#181a1b',
@@ -196,7 +208,6 @@ const NewBlog = () => {
           }}
           variant='contained'
           onClick={() => createBlog()}
-          
         >
           {' '}
           ADD BLOG

@@ -10,8 +10,8 @@ interface dataAPIProps {
 
 const APITest: React.FC = () => {
   const [dataAPI, setDataAPI] = useState<dataAPIProps[] | []>([])
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false)
 
   const apiURL = 'https://jsonplaceholder.typicode.com/posts'
 

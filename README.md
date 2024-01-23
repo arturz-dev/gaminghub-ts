@@ -2,7 +2,7 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-MacBookTest2
+This app use json-server, to run this pass command in terminal: npm run server-json
 
 Currently, two official plugins are available:
 

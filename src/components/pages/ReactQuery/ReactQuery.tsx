@@ -20,7 +20,7 @@ const ReactQueryComp = () => {
     isError,
   } = useQuery({ queryKey: ['simplequery'], queryFn: getData })
 
-  console.log('dataFromApi:', dataFromApi?.data)
+  //console.log('dataFromApi:', dataFromApi?.data)
 
   if (isLoading) return <div>Loading...</div>
   if (isError) return <div>Error...</div>

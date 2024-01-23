@@ -20,23 +20,23 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-    <Router>
-      <ScrollTop />
-      <Routes>
-        <Route path='' element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path={routerPaths.BLOG} element={<Blog />} />
-          <Route path={routerPaths.BLOG_LIST} element={<BlogList />} />
-          <Route path={routerPaths.LAST_BLOG} element={<LastBlog />} />
-          <Route path={routerPaths.NEW_BLOG} element={<NewBlog />} />
-          <Route path={routerPaths.API_TEST} element={<APITest />} />
-          <Route path={routerPaths.API_REDUX} element={<TestApiRedux />} />
-          <Route path={routerPaths.STYL_COMP} element={<StylCompPg />} />
-          <Route path={routerPaths.REACT_QUERY} element={<ReactQueryComp />}/>
-          <Route path='*' element={PageNotFoundMsg()} />
-        </Route>
-      </Routes>
-    </Router>
+      <Router>
+        <ScrollTop />
+        <Routes>
+          <Route path='' element={<RootLayout />}>
+            <Route index element={<Home />} />
+            <Route path={routerPaths.BLOG} element={<Blog />} />
+            <Route path={routerPaths.BLOG_LIST} element={<BlogList />} />
+            <Route path={routerPaths.LAST_BLOG} element={<LastBlog />} />
+            <Route path={routerPaths.NEW_BLOG} element={<NewBlog />} />
+            <Route path={routerPaths.API_TEST} element={<APITest />} />
+            <Route path={routerPaths.API_REDUX} element={<TestApiRedux />} />
+            <Route path={routerPaths.STYL_COMP} element={<StylCompPg />} />
+            <Route path={routerPaths.REACT_QUERY} element={<ReactQueryComp />} />
+            <Route path='*' element={PageNotFoundMsg()} />
+          </Route>
+        </Routes>
+      </Router>
     </QueryClientProvider>
   )
 }

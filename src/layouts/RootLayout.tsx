@@ -10,7 +10,7 @@ import { fetchRates } from '../features/currencyDataSlice'
 const RootLayout = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(getFromLocalStorage())
+    //dispatch(getFromLocalStorage())
     // eslint-disable-next-line react-hooks/exhaustive-deps
     dispatch(fetchRates())
   }, [])
